@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%- title %>
+  </title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">XX眼鏡官網</a></h1>
+      <ul class="menu">
+        <li><a href="#">系列鏡框</a></li>
+        <li><a href="#">門市據點</a></li>
+        <li><a href="#">部落格</a></li>
+        <li><a href="faq.html">常見問題</a></li>
+      </ul>
+      <span class="material-icons show-menu">
+        menu
+      </span>
+    </div>
+  </header>
+
+  <%- contents %>
+
+    <footer class="footer">
+      <div class="container">
+        <nav class="navbar">
+          <ul class="f-menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="#">系列鏡框</a></li>
+            <li><a href="#">門市據點</a></li>
+            <li><a href="#">部落格</a></li>
+            <li><a href="faq.html">常見問題</a></li>
+          </ul>
+          <ul class="f-icon">
+            <li><a href="#"><img src="./assets/images/ic-social-fb.png" alt="fb-icon"></a></li>
+            <li><a href="#"><img src="./assets/images/ic_social_ig.png" alt="ig-icon"></a></li>
+            <li><a href="#"><img src="./assets/images/ic_social_line.png" alt="line-icon"></a></li>
+          </ul>
+        </nav>
+        <nav class="mobile-navbar">
+          <ul class="contact">
+            <li class="tel-icon"><span class="material-icons">
+                call
+              </span>
+              <a href="tel:+0800-000-000">0800-000-000</a>
+            </li>
+            <li>
+              <span class="material-icons">
+                mail
+              </span>
+              <a href="mailto:glasses@business.com">glasses@business.com</a>
+            </li>
+          </ul>
+          <ul class="mobile-f-icon">
+            <li><a href="#"><img src="./assets/images/ic-social-fb.png" alt="fb-icon"></a></li>
+            <li><a href="#"><img src="./assets/images/ic_social_ig.png" alt="ig-icon"></a></li>
+            <li><a href="#"><img src="./assets/images/ic_social_line.png" alt="line-icon"></a></li>
+          </ul>
+        </nav>
+        <div class="copyright">
+          <p>Copyright © 2020 Glasses.All rights reserved.</p>
+          <ul class="privacy">
+            <li><a href="#">隱私權政策</a></li>
+            <li><a href="#">服務條款</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/all.js"></script>
+</body>
+
+</html>

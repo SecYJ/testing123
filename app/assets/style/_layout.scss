@@ -1,0 +1,313 @@
+//pc container
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+//pad container
+.container {
+    @include pad() {
+        max-width: 720px;
+    }
+}
+//mobile container
+.container {
+    @include mobile() {
+        max-width: 372px;
+    }
+}
+//PC版header區塊
+.header {
+    background-color: $primary;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo a {
+        background-image: url(../images/logo-white.png);
+        display: block;
+        width: 80px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include hide-text;
+    }
+    .logo a:hover {
+        opacity: 0.7;
+    }
+    .menu {
+        display: flex;
+        li {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        li:not(:last-child) {
+            padding-right: $spacer * 6;
+        }
+        a {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 400;
+            display: block;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+    }
+    .show-menu {
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+}
+//Pad版header區塊
+// .header {
+//     .container {
+//         @include pad() {
+//             // padding: 0 36px;
+//         }
+//     }
+// }
+//mobile版header區塊
+.header {
+    .menu {
+        @include mobile() {
+            background: $primary;
+            //直式並排
+            flex-direction: column;
+            //隱藏選單
+            max-height: 0px;
+            overflow: hidden;
+            //絕對定位在header上
+            position: absolute;
+            z-index: 100;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            transition: max-height 2.5s;
+            li {
+                padding: 10px 0;
+                border-top: 2px solid #fff;
+            }
+            li:not(:last-child) {
+                padding-right: 0;
+            }
+            a {
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+    .show-menu {
+        @include mobile() {
+            display: block;
+            margin: 20px 0;
+            font-size: 40px;
+        }
+    }
+}
+// mobile版header區塊漢堡選單
+.open-menu {
+    .menu {
+        @include mobile() {
+            max-height: 400px;
+        }
+    }
+}
+//PC版footer區塊
+.footer {
+    background: $primary;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 60px;
+        margin-bottom: 36px;
+    }
+    .f-menu {
+        display: flex;
+        li:not(:last-child) {
+            margin-right: $spacer * 6;
+        }
+        a {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+    }
+    .f-icon {
+        display: flex;
+        li:not(:last-child) {
+            margin-right: $spacer * 4;
+        }
+        img {
+            width: 48px;
+            height: 48px;
+        }
+        img:hover {
+            opacity: 0.7;
+        }
+    }
+    .contact {
+        padding-bottom: ($spacer * 4)-1;
+        border-bottom: 1px solid #fff;
+        margin-bottom: $spacer * 4;
+        li {
+            display: flex;
+            align-items: center;
+        }
+        .tel-icon {
+            margin-bottom: $spacer;
+        }
+        a {
+            color: #fff;
+            font-size: 36px;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+        .material-icons {
+            color: #fff;
+            font-size: 36px;
+            margin-right: 22px;
+        }
+    }
+    //pc隱藏mobile區塊
+    .mobile-f-icon {
+        display: none;
+    }
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding-bottom: $spacer * 4;
+        .privacy {
+            display: flex;
+        }
+        li:not(:last-child) {
+            margin-right: $spacer * 6;
+        }
+        a {
+            font-size: 14px;
+            display: block;
+            color: #fff;
+        }
+    }
+}
+//pad版footer區塊
+.footer {
+    .navbar {
+        @include pad() {
+            padding-top: $spacer * 7;
+            margin-bottom: $spacer * 4;
+        }
+    }
+    .f-icon {
+        li:not(:last-child) {
+            @include pad() {
+                margin-right: $spacer * 2;
+            }
+        }
+        img {
+            @include pad() {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    .copyright {
+        @include pad() {
+            padding-bottom: $spacer * 5;
+        }
+    }
+}
+//mobile版footer區塊
+.footer {
+    //隱藏pc版footer樣式
+    .navbar {
+        @include mobile() {
+            display: none;
+        }
+    }
+    //打開mobile版footer樣式
+    .mobile-f-icon {
+        @include mobile() {
+            display: block;
+            display: flex;
+        }
+        li:not(:last-child) {
+            @include mobile() {
+                margin-right: $spacer;
+            }
+        }
+        img {
+            @include mobile() {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    .mobile-navbar {
+        @include mobile() {
+            display: flex;
+            justify-content: space-between;
+            padding-top: $spacer * 3;
+            padding-bottom: ($spacer * 3)-1;
+            margin-bottom: $spacer * 2;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .contact {
+        @include mobile() {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        a {
+            @include mobile() {
+                font-size: 16px;
+            }
+        }
+        .material-icons {
+            @include mobile() {
+                font-size: 18px;
+                margin-right: $spacer;
+            }
+        }
+    }
+    .copyright {
+        //mobile版copyright變直式
+        @include mobile() {
+            flex-direction: column;
+            padding-bottom: $spacer * 3;
+        }
+        p {
+            @include mobile() {
+                margin-bottom: $spacer;
+            }
+        }
+        .privacy {
+            @include mobile() {
+                flex-direction: column;
+            }
+            li:not(:last-child) {
+                @include mobile() {
+                    margin-bottom: $spacer;
+                }
+            }
+            a {
+                @include mobile() {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

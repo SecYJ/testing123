@@ -1,0 +1,149 @@
+//banner區塊
+.banner {
+    padding-top: $spacer * 10;
+    background-image: url(../images/home-header.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    @include pad() {
+        background-image: url(../images/home-header-sm.png);
+    }
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
+        height: 100%;
+        h2 {
+            font-size: 36px;
+            color: $text-color;
+            @include mobile() {
+                font-size: 16px;
+            }
+        }
+        p {
+            font-size: 64px;
+            color: $text-color;
+            font-weight: 700;
+            margin-bottom: $spacer * 0.5;
+            @include mobile() {
+                font-size: 24px;
+                margin-bottom: $spacer;
+            }
+        }
+        a {
+            background-color: $primary;
+            display: block;
+            width: 104px;
+            height: 40px;
+            color: #fff;
+            font-size: 20px;
+            padding: 6px 12px;
+        }
+        a:hover {
+            color: #000;
+        }
+    }
+}
+//服務項目區塊
+.service {
+    background: $secondary;
+    .container {
+        padding-top: $spacer * 10;
+        padding-bottom: $spacer * 10;
+        @include mobile() {
+            padding-top: $spacer * 5;
+            padding-bottom: $spacer * 5;
+        }
+    }
+    h2 {
+        text-align: center;
+        font-size: 48px;
+        color: $text-color;
+        font-weight: 700;
+        margin-bottom: $spacer * 3;
+        @include mobile() {
+            font-size: 24px;
+        }
+    }
+    .service-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        @include pad() {
+            flex-wrap: wrap;
+        }
+        li {
+            width: 25%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include pad() {
+                width: calc(50% - 12px);
+            }
+            @include mobile() {
+                width: 100%;
+            }
+        }
+        h4 {
+            color: $text-color;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: $spacer;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: $spacer * 2;
+        }
+    }
+}
+// 經典鏡框區塊
+.classic {
+    margin-top: $spacer * 10;
+    margin-bottom: $spacer * 10;
+    text-align: center;
+    @include mobile() {
+        margin-top: $spacer * 5;
+        margin-bottom: $spacer * 5;
+    }
+    h2 {
+        font-size: 48px;
+        font-weight: 700;
+        color: $text-color;
+        margin-bottom: $spacer * 6;
+        @include mobile() {
+            font-size: 24px;
+            margin-bottom: $spacer * 3;
+        }
+    }
+    .classic-item {
+        display: flex;
+        gap: 24px;
+        @include pad() {
+            flex-wrap: wrap;
+        }
+        li {
+            width: 33.33333%;
+            @include pad() {
+                width: 100%;
+            }
+        }
+        img {
+            margin-bottom: $spacer;
+            @include pad() {
+                max-width: calc(50% - 12px);
+            }
+            @include mobile() {
+                max-width: 100%;
+            }
+        }
+        h3 {
+            font-size: 48px;
+            font-weight: 900;
+            color: $primary;
+        }
+    }
+}
